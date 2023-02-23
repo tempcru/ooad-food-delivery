@@ -2,36 +2,28 @@ package com.aa.ooad.internal.restaurant.entity;
 
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity(name = "menu")
+@Table(name = "menu")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Menu {
 
+	@Id
+	private String menuId;
+	@Column(name = "restaurant_id")
+	private String restaurantId;
 	private String name;
-	private int price;
-	private List<Option> options;
-	
-	public Menu(String menuName, int price, List<Option> optionList) {
-		super();
-		this.name = menuName;
-		this.price = price;
-		this.options = optionList;
-	}
-	
-	public String getMenuName() {
-		return name;
-	}
-	public void setMenuName(String menuName) {
-		this.name = menuName;
-	}
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	public List<Option> getOptionList() {
-		return options;
-	}
-	public void setOptionList(List<Option> optionList) {
-		this.options = optionList;
-	}
-	
+	private int price; 
 }
